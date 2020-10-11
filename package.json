@@ -12,12 +12,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:precommit"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
-      "./node_modeuls/.bin/eslint --fix",
+      "./node_modules/.bin/eslint --fix",
       "git add"
     ]
   },
