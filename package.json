@@ -1,0 +1,38 @@
+{
+  "name": "basic-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon .",
+    "lint": "./node_modules/.bin/eslint \"**/*.js\" --ignore-pattern node_modules/",
+    "lint:fix": "./node_modules/.bin/eslint --fix --ext .js .",
+    "lint:precommit": "./node_modules/.bin/eslint --ignore-path .gitignore --ext .js . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:precommit"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modeuls/.bin/eslint --fix",
+      "git add"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "glob": "^7.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "generate-template-files": "^3.0.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0"
+  }
+}
